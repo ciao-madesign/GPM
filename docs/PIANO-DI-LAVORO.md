@@ -70,20 +70,16 @@ valutarla con calma quando saremo vicini a costruirla davvero.
 va verificato chi supporta l'emissione di carte virtuali in Italia/UE
 con i limiti di spesa richiesti dalla specifica.
 
----
+### 2026-09-01 — Confermate 4 migliorie allo stack
 
-## Proposte di miglioramento allo stack — in attesa di conferma
+**Decisione:** l'utente ha confermato queste 4 proposte, che diventano
+scelte definitive (non più "da confermare"):
 
-Oltre a quanto già indicato nella specifica, propongo alcune aggiunte
-per adattare meglio lo stack a un pubblico anziano/fragile e per
-tenere l'MVP semplice. Nessuna è ancora stata implementata: sono solo
-proposte, segnate anche in `CLAUDE.md`.
-
-| Proposta | Perché |
+| Scelta | Perché |
 |---|---|
-| **shadcn/ui** (componenti grafici pronti, basati su Tailwind) | Dà componenti già accessibili (testo grande, buon contrasto, aree cliccabili ampie) e completamente modificabili — importante perché una parte degli utenti è anziana. |
+| **shadcn/ui** (componenti grafici pronti, basati su Tailwind) | Componenti già accessibili (testo grande, buon contrasto, aree cliccabili ampie) e completamente modificabili — importante perché una parte degli utenti è anziana. |
 | **Resend** per le email | Servizio semplice ed economico per inviare email (conferme, notifiche), si integra bene con Next.js. |
-| **Rimandare gli SMS** dopo l'MVP | Gli SMS hanno un costo per ogni invio. Per iniziare bastano notifiche push (gratuite) ed email; si aggiungono gli SMS solo se si rivelano necessari. |
+| **SMS rimandati** dopo l'MVP | Gli SMS hanno un costo per ogni invio. Per iniziare bastano notifiche push (gratuite) ed email; si aggiungono gli SMS solo se si rivelano necessari. |
 | **Niente monorepo/Turborepo** | Un'unica app Next.js è più semplice da gestire per l'MVP. Anche la specifica infrastrutturale lo suggerisce come opzione valida per iniziare. |
 
 ---

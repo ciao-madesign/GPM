@@ -64,19 +64,19 @@ e 13 (parte infrastrutturale).
 | ORM | Drizzle |
 | Hosting/CI-CD | Vercel + GitHub Actions |
 | Autenticazione | **Clerk** (confermato — vedi decisione 2026-09-01) |
-| Componenti UI | shadcn/ui + Radix sopra Tailwind (proposta, da confermare) |
+| Componenti UI | shadcn/ui + Radix sopra Tailwind (confermato — vedi decisione 2026-09-01) |
 | Mappe | Mapbox |
 | Pagamenti | Da decidere in fase P4. Candidati: Stripe Issuing, Lithic, Marqeta (verificare copertura Italia/UE) |
-| Notifiche push/email | Web Push (nativo, gratuito) + Resend per le email (proposta, da confermare) |
-| SMS | Rimandato dopo l'MVP, si aggiunge solo se emerge un bisogno concreto (proposta) |
+| Notifiche push/email | Web Push (nativo, gratuito) + Resend per le email (confermato — vedi decisione 2026-09-01) |
+| SMS | Rimandato dopo l'MVP, si aggiunge solo se emerge un bisogno concreto (confermato — vedi decisione 2026-09-01) |
 | Monitoraggio | Sentry |
 | Analytics | PostHog |
 | Test | Vitest (unit/integration) + Playwright (E2E) |
 | Validazione dati | Zod |
 
 Architettura: **monolite modulare**, **un'unica app Next.js** (niente
-monorepo/Turborepo per l'MVP — proposta, coerente con la specifica
-infrastrutturale sez. 5), organizzata in moduli indipendenti: commissions,
+monorepo/Turborepo per l'MVP — confermato 2026-09-01, coerente con la
+specifica infrastrutturale sez. 5), organizzata in moduli indipendenti: commissions,
 matching, payments, lockers, trust, delegations, notifications... Niente
 microservizi per l'MVP. Vedi spec sez. 3-4 e 14 (parte infrastrutturale).
 
