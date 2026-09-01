@@ -40,6 +40,52 @@ infrastrutturale propone uno stack preciso (Next.js + TypeScript + Neon
 + Drizzle + Vercel), ma l'avvio tecnico vero e proprio è rimandato a
 quando l'utente darà il via libera.
 
+### 2026-09-01 — Scelto Clerk per il login
+
+**Decisione:** usare **Clerk** per gestire l'accesso di assistiti,
+tutori e commissionari, al posto della soluzione "fai-da-te" (Auth.js).
+
+**Perché:** la specifica di sicurezza richiede doppia autenticazione
+obbligatoria per i tutori (l'account più delicato, perché può muovere
+soldi) e un accesso semplice ma robusto per l'assistito (idealmente
+impronta/riconoscimento del volto, non password complesse). Clerk
+offre già pronte queste funzioni, riducendo il rischio di errori di
+sicurezza fatti in casa. Ha un piano gratuito ampio, sufficiente per
+l'MVP.
+
+**Alternativa scartata:** Auth.js — gratuito, ma avremmo dovuto
+costruire a mano le protezioni più delicate (MFA, gestione sessioni,
+recupero accesso tramite tutore), con più lavoro e più rischio.
+
+### 2026-09-01 — Pagamenti e carta virtuale: decisione rimandata
+
+**Decisione:** non scegliamo ora il fornitore per i pagamenti e la
+carta virtuale. Se ne riparla in fase **P4** (gestione del denaro).
+
+**Perché:** è la parte più delicata dal punto di vista legale e
+finanziario (la specifica lo indica esplicitamente, sez. 47). Ha senso
+valutarla con calma quando saremo vicini a costruirla davvero.
+
+**Candidati da valutare più avanti:** Stripe Issuing, Lithic, Marqeta —
+va verificato chi supporta l'emissione di carte virtuali in Italia/UE
+con i limiti di spesa richiesti dalla specifica.
+
+---
+
+## Proposte di miglioramento allo stack — in attesa di conferma
+
+Oltre a quanto già indicato nella specifica, propongo alcune aggiunte
+per adattare meglio lo stack a un pubblico anziano/fragile e per
+tenere l'MVP semplice. Nessuna è ancora stata implementata: sono solo
+proposte, segnate anche in `CLAUDE.md`.
+
+| Proposta | Perché |
+|---|---|
+| **shadcn/ui** (componenti grafici pronti, basati su Tailwind) | Dà componenti già accessibili (testo grande, buon contrasto, aree cliccabili ampie) e completamente modificabili — importante perché una parte degli utenti è anziana. |
+| **Resend** per le email | Servizio semplice ed economico per inviare email (conferme, notifiche), si integra bene con Next.js. |
+| **Rimandare gli SMS** dopo l'MVP | Gli SMS hanno un costo per ogni invio. Per iniziare bastano notifiche push (gratuite) ed email; si aggiungono gli SMS solo se si rivelano necessari. |
+| **Niente monorepo/Turborepo** | Un'unica app Next.js è più semplice da gestire per l'MVP. Anche la specifica infrastrutturale lo suggerisce come opzione valida per iniziare. |
+
 ---
 
 ## Roadmap prevista (dalla specifica, sezione 44)
